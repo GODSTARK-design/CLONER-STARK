@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.py", "use": "@vercel/python", "config": { "maxLambdaSize": "50mb" } }
+  ],
+  "routes": [
+    { "src": "/copy", "dest": "api/copy.py" },
+    { "src": "/download/(.*)", "dest": "api/copy.py" }
+  ]
+}
